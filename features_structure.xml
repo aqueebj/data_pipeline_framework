@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline xsi:schemaLocation = "http://www.sudhanshu-semwal/pipeline pipeline.xsd"
+xmlns = "http://www.sudhanshu-semwal/pipeline"
+xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
+<input>
+    <feature>
+    SepalLength
+    <dtype>
+    </dtype>
+    </feature>
+    <feature>
+     SepalWidth
+        <dtype>
+        </dtype>
+    </feature>
+    <feature>
+    PetalLength
+        <dtype>
+        </dtype>     
+    </feature>
+    <feature> 
+    PetalWidth
+        <dtype>
+        </dtype> 
+    </feature>
+</input>
+<executor>
+    <file_link = "./normalize.py"/>
+</executor>
+</pipeline>

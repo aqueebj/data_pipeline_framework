@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8">
+<schema xmlns = "http://www.w3.org/2001/XMLSchema"
+xmlns:loc = "http://www.sudhanshu-semwal/pipeline"
+targetNamespace = "http://www.sudhanshu-semwal/pipeline"
+elementFormDefault = "qualified">
+    <element name = "pipeline">
+        <sequence>
+            <element name = "input">
+                <complexType>
+                    <sequence>
+                        <element name = "feature" minOccurs=4 maxOccurs = 4>
+                            <element name ="dtype" fixed = "int">
+
+                            </element>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name = "executor">
+                <element name = "file_link">
+                
+                </element>
+            </element>
+        </sequence>
+    </element>
+</schema>
+
