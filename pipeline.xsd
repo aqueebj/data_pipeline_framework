@@ -3,7 +3,7 @@
 xmlns:loc = "http://www.sudhanshu-semwal/pipeline"
 targetNamespace = "http://www.sudhanshu-semwal/pipeline"
 elementFormDefault = "qualified">
-    <element name = "pipeline">
+    <element name = "pipeline-task">
         <sequence>
             <element name = "input">
                 <complexType>

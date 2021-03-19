@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pipeline xsi:schemaLocation = "http://www.sudhanshu-semwal/pipeline pipeline.xsd"
+<pipeline-task xsi:schemaLocation = "http://www.sudhanshu-semwal/pipeline pipeline.xsd"
 xmlns = "http://www.sudhanshu-semwal/pipeline"
 xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
 <input>
@@ -25,6 +25,8 @@ xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
     </feature>
 </input>
 <executor>
-    <file_link = "./normalize.py"/>
+    <file_link>
+     "./normalize.py"
+     </file_link>
 </executor>
-</pipeline>
+</pipeline-task>
