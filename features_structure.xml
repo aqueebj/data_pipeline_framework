@@ -2,7 +2,7 @@
 <pipeline-task xsi:schemaLocation = "http://www.sudhanshu-semwal/pipeline pipeline.xsd"
 xmlns = "http://www.sudhanshu-semwal/pipeline"
 xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
-<input>
+<input name ="iris_features">
     <feature>
     SepalLength
     <dtype>
@@ -29,4 +29,26 @@ xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
      "./normalize.py"
      </file_link>
 </executor>
+<output name = "iris-features">
+    <feature>
+    SepalLength
+    <dtype>
+    </dtype>
+    </feature>
+    <feature>
+     SepalWidth
+        <dtype>
+        </dtype>
+    </feature>
+    <feature>
+    PetalLength
+        <dtype>
+        </dtype>     
+    </feature>
+    <feature> 
+    PetalWidth
+        <dtype>
+        </dtype> 
+    </feature>
+</output>
 </pipeline-task>

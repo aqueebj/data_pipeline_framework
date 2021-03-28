@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Task Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- <script src ="getInputs.js"></script> -->
+</head>
+<body onload="construct()">
+
+
+<div class="container">
+  <h2>Task Generator</h2>
+  <p>A general view of Task-Container</p> 
+ 
+
+  <div id="tablediv">
+    
+    <table id="Table" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr.No</th>
+          <th>Feature_Name</th>
+		  <th>Data-type</th>
+          <th>Default_value</th>
+		  <th>Delete</th>
+		  <th>Add Rows</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>1</td>
+        <td><input size=25 type="text" id="latbox" /></td>
+        <td><input size=25 type="text" id="lngbox" /></td>
+        <td><input size=25 type="text" id="z" /></td>
+        <td><input type="button" id="delInputButton" value="Delete" onclick="deleteRow(this)" /></td>
+        <td><input type="button" id="addInputButton" value="Add More Features" onclick="insRow()" /></td>
+        </tr>      
+      </tbody>
+   	 </table>
+   	 <input type="button" type = "submit" id="generateTask" value="Generate Task"  /><br/><br/>
+  	
+	</div>
+
+  
+</div>
+
+<script>
+	function construct()
+	{
+		inputs = [];
+	}
+	
+	  function deleteRow(row) {
+	  var i = row.parentNode.parentNode.rowIndex;
+	  document.getElementById('Table').deleteRow(i);
+	}
+
+
+	function insRow() {
+	  console.log('hi');
+	  var x = document.getElementById('Table');
+	  var new_row = x.rows[1].cloneNode(true);
+	  var len = x.rows.length;
+	  new_row.cells[0].innerHTML = len;
+
+	  var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+	  inp1.id += len;
+	  inp1.value = '';
+	  var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+	  inp2.id += len;
+	  inp2.value = '';
+	  x.appendChild(new_row);
+	}
+  function fun()
+  {
+	console.log("inside fun");
+	var rows_len = document.getElementById("Table").rows.length;
+	console.log(rows_len);
+	
+	for(i=1;i<rows_len;i++)
+	{
+		sr_no = document.getElementById("Table").rows[i].cells[0].innerHTML;
+		name = document.getElementById("Table").rows[i].cells[1].children[0].value;
+		d_type = document.getElementById("Table").rows[i].cells[2].children[0].value;
+		default_val = document.getElementById("Table").rows[i].cells[3].children[0].value;
+		
+		input = {
+				  "sr_no":sr_no,
+				  "name":name,
+				  "Data_type":d_type,
+				  "default_val":default_val
+				}
+		inputs.push(input);
+		
+	}
+	
+	console.log(inputs);
+	
+
+  }
+</script>
+</body>
+</html>
+
+
+
+
